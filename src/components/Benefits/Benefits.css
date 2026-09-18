@@ -1,0 +1,196 @@
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.benefits {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 70px;
+  margin: 0;
+  padding: 0;
+  background: var(--color-blue-light);
+  overflow: hidden;
+}
+
+/* =====================================================
+   CONTENEDOR
+===================================================== */
+
+.benefits-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1160px, calc(100% - 40px));
+  min-height: 70px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+
+/* =====================================================
+   BENEFICIO
+===================================================== */
+
+.benefit-item {
+  position: relative;
+
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+  padding: 6px 18px;
+
+  color: var(--color-blue-dark);
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: var(--radius-sm);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Separadores */
+
+.benefit-item:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  width: 1px;
+  height: 36px;
+
+  transform: translateY(-50%);
+
+  background: rgba(0, 150, 64, 0.16);
+}
+
+/* =====================================================
+   ICONO
+===================================================== */
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: var(--color-primary);
+}
+
+.benefit-icon svg {
+  width: 30px;
+  height: 30px;
+
+  stroke-width: 1.9;
+
+  transition:
+    transform 0.2s ease;
+}
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.benefit-item:hover {
+  transform: translateY(-2px);
+
+  background: rgba(0, 150, 64, 0.035);
+}
+
+.benefit-item:hover .benefit-icon svg {
+  transform: scale(1.08);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .benefits {
+    min-height: auto;
+  }
+
+  .benefits-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+
+    padding: 10px 0;
+  }
+
+  .benefit-item {
+    justify-content: flex-start;
+
+    font-size: 13px;
+  }
+
+  .benefit-item:nth-child(2)::after {
+    display: none;
+  }
+
+  .benefit-item:nth-child(4)::after {
+    display: none;
+  }
+}
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (max-width: 500px) {
+
+  .benefits-container {
+    width: calc(100% - 24px);
+
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 9px 0;
+  }
+
+  .benefit-item {
+    gap: 8px;
+
+    padding: 6px 5px;
+
+    font-size: 11px;
+  }
+
+  .benefit-item::after {
+    height: 30px;
+  }
+
+  .benefit-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* =====================================================
+   MÓVIL PEQUEÑO
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .benefit-item {
+    gap: 6px;
+
+    font-size: 10px;
+  }
+
+  .benefit-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+}

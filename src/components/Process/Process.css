@@ -1,0 +1,279 @@
+.process-section {
+  position: relative;
+  padding: 30px 0;
+  background: var(--color-background-soft);
+  overflow: hidden;
+}
+
+/* =========================================================
+   BURBUJAS FLOTANTES
+   ========================================================= */
+
+.process-bubble {
+  position: absolute;
+  z-index: 1;
+
+  display: block;
+
+  border: 1px solid rgba(13, 110, 253, 0.5);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.4) 20%,
+      rgba(13, 110, 253, 0.15) 50%,
+      rgba(13, 110, 253, 0.08) 80%,
+      rgba(13, 110, 253, 0) 100%
+    );
+
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 10px rgba(255, 255, 255, 0.9),
+    0 8px 32px rgba(13, 110, 253, 0.25),
+    0 0 0 1px rgba(13, 110, 253, 0.15);
+
+  pointer-events: auto;
+  animation: floatBubble 6s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.process-bubble:hover {
+  animation: bubbleExplode 0.4s ease-out forwards;
+}
+
+@keyframes bubbleExplode {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.process-bubble-1 {
+  width: 45px;
+  height: 45px;
+  left: 5%;
+  top: 15%;
+  animation-delay: 0s;
+}
+
+.process-bubble-2 {
+  width: 25px;
+  height: 25px;
+  left: 12%;
+  top: 35%;
+  animation-delay: 1s;
+}
+
+.process-bubble-3 {
+  width: 60px;
+  height: 60px;
+  left: 85%;
+  top: 10%;
+  animation-delay: 2s;
+}
+
+.process-bubble-4 {
+  width: 35px;
+  height: 35px;
+  left: 90%;
+  top: 45%;
+  animation-delay: 0.5s;
+}
+
+.process-bubble-5 {
+  width: 20px;
+  height: 20px;
+  left: 8%;
+  top: 60%;
+  animation-delay: 1.5s;
+}
+
+.process-bubble-6 {
+  width: 38px;
+  height: 38px;
+  left: 85%;
+  top: 25%;
+  animation-delay: 0.3s;
+}
+
+.process-bubble-7 {
+  width: 28px;
+  height: 28px;
+  left: 92%;
+  top: 55%;
+  animation-delay: 1.8s;
+}
+
+.process-bubble-8 {
+  width: 50px;
+  height: 50px;
+  left: 22%;
+  top: 70%;
+  animation-delay: 0.9s;
+}
+
+.process-bubble-9 {
+  width: 18px;
+  height: 18px;
+  left: 78%;
+  top: 80%;
+  animation-delay: 2.1s;
+}
+
+.process-bubble-10 {
+  width: 35px;
+  height: 35px;
+  left: 45%;
+  top: 30%;
+  animation-delay: 1.2s;
+}
+
+.process-bubble-11 {
+  width: 22px;
+  height: 22px;
+  left: 55%;
+  top: 65%;
+  animation-delay: 0.6s;
+}
+
+.process-bubble-12 {
+  width: 40px;
+  height: 40px;
+  left: 8%;
+  top: 85%;
+  animation-delay: 2.3s;
+}
+
+/* Animación de flotación - abajo hacia arriba */
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(120vh) translateX(0) scale(1);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(50vh) translateX(20px) scale(1.1);
+    opacity: 0.5;
+  }
+
+  90% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(-100vh) translateX(-10px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.process-container {
+  width: min(100% - 48px, var(--container-width));
+  margin: 0 auto;
+}
+
+.process-heading {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.process-heading span {
+  color: var(--color-primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.process-heading h2 {
+  margin: 4px 0 0;
+
+  color: var(--color-blue-dark);
+  font-size: clamp(18px, 2vw, 26px);
+  letter-spacing: 2px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.process-step {
+  position: relative;
+
+  padding: 20px 18px;
+
+  text-align: center;
+
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.process-number {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+
+  color: #b7dbe3;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.process-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+
+  border-radius: 50%;
+}
+
+.process-step h3 {
+  margin: 0 0 5px;
+
+  color: var(--color-blue-dark);
+  font-size: 14px;
+}
+
+.process-step p {
+  margin: 0;
+
+  color: var(--color-text-light);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+@media (max-width: 800px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}

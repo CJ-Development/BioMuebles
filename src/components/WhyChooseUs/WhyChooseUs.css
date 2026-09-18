@@ -1,0 +1,682 @@
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
+
+.why-section {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  background: var(--color-blue-light);
+}
+
+/* =====================================================
+   ONDA SUPERIOR
+===================================================== */
+
+.why-section::before {
+  content: '';
+
+  position: absolute;
+  z-index: 4;
+
+  top: -45px;
+  left: -5%;
+
+  width: 110%;
+  height: 95px;
+
+  background: #ffffff;
+
+  border-radius:
+    0 0 50% 50% /
+    0 0 100% 100%;
+
+  transform: rotate(-1deg);
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   ONDA INFERIOR
+===================================================== */
+
+.why-section::after {
+  content: '';
+
+  position: absolute;
+  z-index: 5;
+
+  left: -5%;
+  bottom: -55px;
+
+  width: 110%;
+  height: 105px;
+
+  background: #ffffff;
+
+  border-radius:
+    50% 50% 0 0 /
+    100% 100% 0 0;
+
+  transform: rotate(1deg);
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   BURBUJAS DECORATIVAS
+===================================================== */
+
+.why-bubble {
+  position: absolute;
+  z-index: 3;
+
+  display: block;
+
+  border: 1px solid rgba(13, 110, 253, 0.5);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.4) 20%,
+      rgba(13, 110, 253, 0.15) 50%,
+      rgba(13, 110, 253, 0.08) 80%,
+      rgba(13, 110, 253, 0) 100%
+    );
+
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 10px rgba(255, 255, 255, 0.9),
+    0 8px 32px rgba(13, 110, 253, 0.25),
+    0 0 0 1px rgba(13, 110, 253, 0.15);
+
+  pointer-events: auto;
+  animation: floatBubble 6s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.why-bubble:hover {
+  animation: bubbleExplode 0.4s ease-out forwards;
+}
+
+@keyframes bubbleExplode {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.why-bubble-1 {
+  width: 40px;
+  height: 40px;
+
+  left: 7%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.why-bubble-2 {
+  width: 25px;
+  height: 25px;
+
+  right: 15%;
+  top: 35%;
+  animation-delay: 1s;
+}
+
+.why-bubble-3 {
+  width: 30px;
+  height: 30px;
+
+  left: 25%;
+  bottom: 25%;
+  animation-delay: 2s;
+}
+
+/* Animación de flotación - abajo hacia arriba */
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(120vh) translateX(0) scale(1);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(50vh) translateX(20px) scale(1.1);
+    opacity: 0.5;
+  }
+
+  90% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(-100vh) translateX(-10px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* =====================================================
+   CONTENEDOR
+===================================================== */
+
+.why-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 1400px);
+
+  min-height: 430px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.05fr 0.95fr;
+
+  align-items: stretch;
+}
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.why-content {
+  position: relative;
+  z-index: 6;
+
+  width: min(100%, 650px);
+
+  margin-left: auto;
+
+  padding: 90px 45px 100px 30px;
+}
+
+/* =====================================================
+   TITULO
+===================================================== */
+
+.why-content h2 {
+  position: relative;
+
+  margin: 0 0 18px;
+
+  color: var(--color-primary);
+
+  font-size: clamp(30px, 3.5vw, 43px);
+
+  line-height: 1.05;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+.why-content h2::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  bottom: -9px;
+
+  width: 50px;
+  height: 3px;
+
+  background: var(--color-primary);
+
+  border-radius: 10px;
+}
+
+/* =====================================================
+   DESCRIPCIÓN
+===================================================== */
+
+.why-description {
+  max-width: 560px;
+
+  margin: 0;
+
+  color: var(--color-blue);
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   RAZONES
+===================================================== */
+
+.why-reasons {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+.why-reason {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  padding: 8px 6px;
+
+  color: var(--color-blue-dark);
+
+  font-size: 11px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  border-radius: var(--radius-sm);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.why-reason:hover {
+  background: rgba(0, 150, 64, 0.035);
+
+  transform: translateY(-2px);
+}
+
+.why-reason svg {
+  color: var(--color-primary);
+
+  transition: transform 0.2s ease;
+}
+
+.why-reason:hover svg {
+  transform: scale(1.08);
+}
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.why-image {
+  position: relative;
+
+  z-index: 1;
+
+  min-height: 430px;
+
+  overflow: hidden;
+
+  border-radius: 0;
+}
+
+/* =====================================================
+   IMAGEN PRINCIPAL
+===================================================== */
+
+.why-image img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center center;
+
+  opacity: 0.94;
+
+  transform: scale(1.02);
+}
+
+/* =====================================================
+   FUSIÓN IMAGEN → FONDO
+===================================================== */
+
+.why-image::before {
+  content: '';
+
+  position: absolute;
+
+  z-index: 2;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 45%;
+
+  background:
+    linear-gradient(
+      to right,
+      var(--color-blue-light) 0%,
+      rgba(238, 250, 251, 0.98) 15%,
+      rgba(238, 250, 251, 0.90) 32%,
+      rgba(238, 250, 251, 0.65) 55%,
+      rgba(238, 250, 251, 0.20) 80%,
+      rgba(238, 250, 251, 0) 100%
+    );
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   FUSIÓN SUAVE DERECHA
+===================================================== */
+
+.why-image::after {
+  content: '';
+
+  position: absolute;
+
+  z-index: 2;
+
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 15%;
+
+  background:
+    linear-gradient(
+      to left,
+      rgba(238, 250, 251, 0.18),
+      rgba(238, 250, 251, 0)
+    );
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   MENSAJE SOBRE LA IMAGEN
+===================================================== */
+
+.why-message {
+  position: absolute;
+
+  z-index: 4;
+
+  right: 7%;
+  bottom: 20%;
+
+  max-width: 190px;
+
+  padding: 14px 19px;
+
+  color: #ffffff;
+
+  background: rgba(0, 59, 92, 0.68);
+
+  border-radius: 14px;
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  font-style: italic;
+
+  line-height: 1.2;
+
+  text-align: left;
+
+  box-shadow:
+    0 8px 20px rgba(0, 59, 92, 0.12);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .why-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .why-content {
+    padding-left: 35px;
+    padding-right: 25px;
+  }
+
+  .why-reasons {
+    gap: 5px;
+  }
+
+  .why-reason {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .why-image::before {
+    width: 48%;
+  }
+}
+
+/* =====================================================
+   TABLET PEQUEÑA
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .why-section::before {
+    top: -35px;
+    height: 75px;
+  }
+
+  .why-section::after {
+    bottom: -45px;
+    height: 85px;
+  }
+
+  .why-container {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .why-content {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 85px 24px 45px;
+  }
+
+  .why-description {
+    max-width: 650px;
+  }
+
+  .why-reasons {
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    gap: 8px;
+
+    max-width: 650px;
+  }
+
+  .why-image {
+    min-height: 330px;
+
+    margin-top: 0;
+  }
+
+  .why-image::before {
+    width: 100%;
+    height: 35%;
+
+    left: 0;
+    top: 0;
+    bottom: auto;
+
+    background:
+      linear-gradient(
+        to bottom,
+        var(--color-blue-light) 0%,
+        rgba(238, 250, 251, 0.92) 30%,
+        rgba(238, 250, 251, 0.35) 70%,
+        rgba(238, 250, 251, 0) 100%
+      );
+  }
+
+  .why-image::after {
+    display: none;
+  }
+
+  .why-message {
+    right: 6%;
+    bottom: 18%;
+  }
+}
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .why-section::before {
+    top: -25px;
+    height: 60px;
+  }
+
+  .why-section::after {
+    bottom: -35px;
+    height: 65px;
+  }
+
+  .why-content {
+    padding: 65px 22px 40px;
+  }
+
+  .why-content h2 {
+    font-size: 34px;
+
+    letter-spacing: -1px;
+  }
+
+  .why-description {
+    font-size: 14px;
+
+    line-height: 1.55;
+  }
+
+  .why-reasons {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 25px;
+  }
+
+  .why-reason {
+    padding: 8px 5px;
+
+    font-size: 11px;
+  }
+
+  .why-reason svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .why-image {
+    min-height: 300px;
+  }
+
+  .why-image img {
+    object-position: center center;
+  }
+
+  .why-image::before {
+    height: 40%;
+  }
+
+  .why-message {
+    right: 20px;
+    bottom: 20%;
+
+    max-width: 165px;
+
+    padding: 12px 15px;
+
+    font-size: 16px;
+  }
+
+  .why-bubble-1 {
+    width: 32px;
+    height: 32px;
+  }
+
+  .why-bubble-2 {
+    width: 20px;
+    height: 20px;
+  }
+
+  .why-bubble-3 {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* =====================================================
+   MÓVIL PEQUEÑO
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .why-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .why-content h2 {
+    font-size: 30px;
+  }
+
+  .why-reasons {
+    gap: 5px;
+  }
+
+  .why-reason {
+    font-size: 10px;
+  }
+
+  .why-message {
+    right: 14px;
+    bottom: 18%;
+
+    font-size: 14px;
+  }
+}

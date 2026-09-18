@@ -1,0 +1,54 @@
+.whatsapp-floating-bubble {
+  position: fixed;
+
+  bottom: 30px;
+  right: 30px;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #25D366;
+
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 4px 12px rgba(37, 211, 102, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  z-index: 9999;
+
+  cursor: pointer;
+}
+
+.whatsapp-floating-bubble:hover {
+  transform: scale(1.1);
+
+  box-shadow:
+    0 6px 20px rgba(37, 211, 102, 0.5),
+    0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-floating-bubble:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-floating-bubble {
+    bottom: 20px;
+    right: 20px;
+
+    width: 55px;
+    height: 55px;
+  }
+}

@@ -1,0 +1,578 @@
+.whatsapp-cta {
+  position: relative;
+  overflow: hidden;
+  overflow-x: hidden;
+
+  min-height: 180px;
+
+  padding: 80px 0 72px;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #1a5f4a 0%,
+    #2d7a5e 50%,
+    #1a5f4a 100%
+  );
+
+  /* Soft noise overlay for texture */
+  background-image:
+    linear-gradient(
+      135deg,
+      #1a5f4a 0%,
+      #2d7a5e 50%,
+      #1a5f4a 100%
+    ),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+}
+
+
+/* =========================================================
+   DECORACIÓN PREMIUM - AMBIENT GLOW
+   ========================================================= */
+
+.cta-glow {
+  position: absolute;
+
+  z-index: 1;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(37, 211, 102, 0.15) 0%,
+    transparent 70%
+  );
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+
+.cta-glow-left {
+  top: -200px;
+
+  left: -200px;
+}
+
+
+.cta-glow-right {
+  bottom: -200px;
+
+  right: -200px;
+}
+
+
+
+
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.cta-container {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(
+    calc(100% - 64px),
+    var(--container-width)
+  );
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 32px;
+}
+
+
+/* =========================================================
+   WHATSAPP GRANDE - DOUBLE BEZEL
+   ========================================================= */
+
+.cta-whatsapp-icon {
+  width: 72px;
+  height: 72px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  /* Outer shell - Double Bezel pattern */
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  padding: 4px;
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+
+.cta-whatsapp-icon .whatsapp-icon {
+  width: 40px;
+  height: 40px;
+
+  /* Inner core */
+  color: #25D366;
+
+  filter: drop-shadow(0 2px 8px rgba(37, 211, 102, 0.4));
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.cta-text {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.cta-text span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 11px;
+
+  line-height: 1.3;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+.cta-text h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(
+    20px,
+    2.2vw,
+    28px
+  );
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   BOTÓN - BUTTON-IN-BUTTON ARCHITECTURE
+   ========================================================= */
+
+.cta-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 14px 24px;
+
+  color: white;
+
+  background: #25D366;
+
+  border-radius: 50px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 4px 20px rgba(37, 211, 102, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+    box-shadow 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+    background 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.02);
+
+  background: #20bd5a;
+
+  box-shadow:
+    0 8px 28px rgba(37, 211, 102, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+.cta-button:active {
+  transform: translateY(-1px) scale(0.98);
+
+  box-shadow:
+    0 2px 12px rgba(37, 211, 102, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+.cta-button .whatsapp-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+.cta-button svg:last-child {
+  /* Arrow icon in button */
+  transition:
+    transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+
+.cta-button:hover svg:last-child {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   BURBUJAS FLOTANTES
+   ========================================================= */
+
+.cta-bubble {
+  position: absolute;
+  z-index: 2;
+
+  display: block;
+
+  border: 1px solid rgba(13, 110, 253, 0.5);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.4) 20%,
+      rgba(13, 110, 253, 0.15) 50%,
+      rgba(13, 110, 253, 0.08) 80%,
+      rgba(13, 110, 253, 0) 100%
+    );
+
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 10px rgba(255, 255, 255, 0.9),
+    0 8px 32px rgba(13, 110, 253, 0.25),
+    0 0 0 1px rgba(13, 110, 253, 0.15);
+
+  pointer-events: auto;
+  animation: floatBubble 6s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cta-bubble:hover {
+  animation: bubbleExplode 0.4s ease-out forwards;
+}
+
+@keyframes bubbleExplode {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.cta-bubble-1 {
+  width: 45px;
+  height: 45px;
+  left: 5%;
+  top: 15%;
+  animation-delay: 0s;
+}
+
+.cta-bubble-2 {
+  width: 25px;
+  height: 25px;
+  left: 12%;
+  top: 35%;
+  animation-delay: 1s;
+}
+
+.cta-bubble-3 {
+  width: 60px;
+  height: 60px;
+  left: 85%;
+  top: 10%;
+  animation-delay: 2s;
+}
+
+.cta-bubble-4 {
+  width: 35px;
+  height: 35px;
+  left: 90%;
+  top: 45%;
+  animation-delay: 0.5s;
+}
+
+.cta-bubble-5 {
+  width: 20px;
+  height: 20px;
+  left: 8%;
+  top: 60%;
+  animation-delay: 1.5s;
+}
+
+.cta-bubble-6 {
+  width: 38px;
+  height: 38px;
+  left: 85%;
+  top: 25%;
+  animation-delay: 0.3s;
+}
+
+.cta-bubble-7 {
+  width: 28px;
+  height: 28px;
+  left: 92%;
+  top: 55%;
+  animation-delay: 1.8s;
+}
+
+.cta-bubble-8 {
+  width: 50px;
+  height: 50px;
+  left: 22%;
+  top: 70%;
+  animation-delay: 0.9s;
+}
+
+.cta-bubble-9 {
+  width: 18px;
+  height: 18px;
+  left: 78%;
+  top: 80%;
+  animation-delay: 2.1s;
+}
+
+.cta-bubble-10 {
+  width: 35px;
+  height: 35px;
+  left: 45%;
+  top: 30%;
+  animation-delay: 1.2s;
+}
+
+.cta-bubble-11 {
+  width: 22px;
+  height: 22px;
+  left: 55%;
+  top: 65%;
+  animation-delay: 0.6s;
+}
+
+.cta-bubble-12 {
+  width: 40px;
+  height: 40px;
+  left: 8%;
+  top: 85%;
+  animation-delay: 2.3s;
+}
+
+/* Animación de flotación - abajo hacia arriba */
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(120vh) translateX(0) scale(1);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(50vh) translateX(20px) scale(1.1);
+    opacity: 0.5;
+  }
+
+  90% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(-100vh) translateX(-10px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .whatsapp-cta {
+    min-height: 160px;
+
+    padding: 64px 0 56px;
+  }
+
+
+  .cta-container {
+    gap: 24px;
+  }
+
+
+  .cta-whatsapp-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+
+  .cta-whatsapp-icon .whatsapp-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .cta-text h2 {
+    font-size: 22px;
+  }
+
+
+  .cta-button {
+    padding: 12px 20px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .whatsapp-cta {
+    min-height: auto;
+
+    padding: 56px 0 48px;
+  }
+
+
+  .cta-container {
+    width: min(
+      calc(100% - 32px),
+      var(--container-width)
+    );
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 16px;
+  }
+
+
+  .cta-whatsapp-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+
+  .cta-text {
+    width: 100%;
+  }
+
+
+  .cta-text h2 {
+    font-size: 20px;
+
+    line-height: 1.25;
+  }
+
+
+  .cta-text h2 br {
+    display: none;
+  }
+
+
+  .cta-button {
+    width: 100%;
+
+    max-width: 280px;
+  }
+}
+
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .whatsapp-cta {
+    padding: 48px 0 40px;
+  }
+
+
+  .cta-container {
+    width: min(
+      calc(100% - 24px),
+      var(--container-width)
+    );
+  }
+
+
+  .cta-text span {
+    font-size: 10px;
+  }
+
+
+  .cta-text h2 {
+    font-size: 18px;
+  }
+
+
+  .cta-button {
+    max-width: 260px;
+  }
+}
