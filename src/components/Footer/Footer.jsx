@@ -39,10 +39,10 @@ function Footer() {
 
             <h3>Servicios</h3>
 
-            <a href="#servicios">Muebles</a>
-            <a href="#servicios">Colchones</a>
-            <a href="#servicios">Alfombras</a>
-            <a href="#servicios">Sillas</a>
+            <a href="#muebles" className="footer-service-link">Muebles</a>
+            <a href="#colchones" className="footer-service-link">Colchones</a>
+            <a href="#alfombras" className="footer-service-link">Alfombras</a>
+            <a href="#sillas" className="footer-service-link">Sillas</a>
 
           </div>
 
@@ -53,10 +53,10 @@ function Footer() {
               &nbsp;
             </h3>
 
-            <a href="#servicios">Cortinas</a>
-            <a href="#servicios">Vehículos</a>
-            <a href="#servicios">Tapicería</a>
-            <a href="#servicios">Mascotas</a>
+            <a href="#cortinas" className="footer-service-link">Cortinas</a>
+            <a href="#vehiculos" className="footer-service-link">Vehículos</a>
+            <a href="#tapiceria" className="footer-service-link">Tapicería</a>
+            <a href="#mascotas" className="footer-service-link">Mascotas</a>
 
           </div>
 

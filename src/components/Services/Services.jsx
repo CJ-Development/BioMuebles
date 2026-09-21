@@ -11,8 +11,14 @@ import {
   Wrench,
 } from 'lucide-react'
 
-import Sofas from '../../assets/services/Sofas.png'
-import Colchones from '../../assets/services/Colchones.png'
+import LimpiezaMuebles from '../../assets/services/Limpieza Muebles.jpeg'
+import LimpiezaColchones from '../../assets/services/Limpieza Colchones.jpeg'
+import LimpiezaAlfombras from '../../assets/services/Limpieza Alfombras.png'
+import LimpiezaCortinas from '../../assets/services/Limpieza Cortinas.jpeg'
+import LimpiezaCarros from '../../assets/services/Limpieza Carros.jpeg'
+import LimpiezaSillas from '../../assets/services/Limpieza Sillas.jpeg'
+import LimpiezaMascotas from '../../assets/services/Limpieza Mascotas.jpeg'
+import LimpiezaTapiceria from '../../assets/services/Limpieza Tapicería.png'
 
 import MedievalBanner from '../MedievalBanner/MedievalBanner'
 import InstallationBanner from '../InstallationBanner/InstallationBanner'
@@ -23,61 +29,75 @@ import './Services.css'
 
 const services = [
   {
+    id: 'muebles',
     title: 'Lavado de Muebles',
     description:
       'Eliminamos manchas, bacterias y malos olores, devolviendo la frescura a tus muebles.',
     icon: Armchair,
-    image: Sofas,
+    image: LimpiezaMuebles,
     category: 'limpieza',
   },
   {
+    id: 'colchones',
     title: 'Lavado de Colchones',
     description:
       'Higienizamos y eliminamos ácaros, manchas y bacterias para un descanso más saludable.',
     icon: BedDouble,
-    image: Colchones,
+    image: LimpiezaColchones,
     category: 'limpieza',
   },
   {
+    id: 'alfombras',
     title: 'Lavado de Alfombras',
     description:
       'Recuperamos la frescura, el color y la limpieza de tus alfombras y tapetes.',
     icon: Waves,
+    image: LimpiezaAlfombras,
     category: 'limpieza',
   },
   {
+    id: 'cortinas',
     title: 'Lavado de Cortinas y Rollers',
     description:
       'Eliminamos el polvo y la suciedad para que tus cortinas luzcan como nuevas.',
     icon: PanelsTopLeft,
+    image: LimpiezaCortinas,
     category: 'limpieza',
   },
   {
+    id: 'vehiculos',
     title: 'Lavado de Vehículos',
     description:
       'Limpiamos el interior y exterior de tu vehículo, dejándolo como nuevo.',
     icon: CarFront,
+    image: LimpiezaCarros,
     category: 'limpieza',
   },
   {
+    id: 'sillas',
     title: 'Lavado de Sillas',
     description:
       'Mantenemos tus sillas limpias, higiénicas y en perfecto estado.',
     icon: Sofa,
+    image: LimpiezaSillas,
     category: 'limpieza',
   },
   {
+    id: 'mascotas',
     title: 'Limpieza de Artículos para Mascotas',
     description:
       'Cuidamos sus espacios y accesorios con productos seguros y efectivos.',
     icon: PawPrint,
+    image: LimpiezaMascotas,
     category: 'limpieza',
   },
   {
+    id: 'tapiceria',
     title: 'Limpieza de Tapicería',
     description:
       'Renovamos y protegemos la tapicería de tus muebles, sillas, sillas de oficina y más.',
     icon: CircleDot,
+    image: LimpiezaTapiceria,
     category: 'limpieza',
   },
 ]
@@ -170,7 +190,7 @@ function Services({ showBanners = false }) {
               const Icon = service.icon
 
               return (
-                <article className="service-card service-card-limpieza" key={service.title}>
+                <article className="service-card service-card-limpieza" id={service.id} key={service.title}>
 
                   {/* Burbujas animadas */}
                   <span className="service-bubble service-bubble-1"></span>

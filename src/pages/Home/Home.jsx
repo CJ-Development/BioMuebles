@@ -3,6 +3,7 @@ import Services from '../../components/Services/Services'
 import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs'
 import BeforeAfter from '../../components/BeforeAfter/BeforeAfter'
 import Process from '../../components/Process/Process'
+import Reviews from '../../components/Reviews/Reviews'
 import WhatsAppCTA from '../../components/WhatsAppCTA/WhatsAppCTA'
 import Footer from '../../components/Footer/Footer'
 
@@ -19,6 +20,8 @@ function Home() {
         <BeforeAfter />
 
         <Process />
+
+        <Reviews />
 
         <WhatsAppCTA />
       </main>

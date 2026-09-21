@@ -64,6 +64,25 @@
   color: #70d996;
 }
 
+.footer-service-link {
+  position: relative;
+}
+
+.footer-service-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #70d996;
+  transition: width 0.3s ease;
+}
+
+.footer-service-link:hover::after {
+  width: 100%;
+}
+
 .footer-social .social-wrapper {
   display: inline-flex;
   list-style: none;

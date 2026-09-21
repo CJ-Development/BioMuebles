@@ -51,6 +51,35 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Scroll suave para anclas */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animación de salto para las cards de servicio */
+@keyframes serviceCardJump {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  70% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.service-card:target {
+  animation: serviceCardJump 0.6s ease-out;
+  scroll-margin-top: 100px;
+}
+
 
 
 body {
