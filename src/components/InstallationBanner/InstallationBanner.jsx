@@ -54,7 +54,7 @@ function InstallationBanner() {
                 </button>
 
                 <a
-                  href="/src/assets/Catalogo/Catálogo de Cortinas.pdf"
+                  href="/src/assets/Catalogo/Catalogo.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="banner-catalog-button"
