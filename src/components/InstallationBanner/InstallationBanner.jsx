@@ -2,6 +2,7 @@ import { Wrench, ArrowRight, BookOpen } from 'lucide-react'
 import './InstallationBanner.css'
 import { useState } from 'react'
 import ServiceModal from '../ServiceModal/ServiceModal'
+import InstalacionCortinas from '../../assets/services/Instalacion Cortinas.png'
 
 function InstallationBanner() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -25,7 +26,7 @@ function InstallationBanner() {
           <div className="banner-image-container">
             <div className="banner-new-badge">NUEVO</div>
             <img
-              src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=400&h=250&fit=crop"
+              src={InstalacionCortinas}
               alt="Instalación profesional de cortinas"
               className="banner-image"
             />
