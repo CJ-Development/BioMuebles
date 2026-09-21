@@ -5,7 +5,7 @@ function Servicios() {
   return (
     <>
       <main>
-        <Services />
+        <Services showBanners={true} />
       </main>
       <Footer />
     </>

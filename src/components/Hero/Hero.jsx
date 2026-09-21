@@ -4,11 +4,14 @@ import {
   Leaf,
   Settings,
   House,
+  Volume2,
+  VolumeX,
 } from 'lucide-react'
 
 import { Link } from 'react-router-dom'
-import HeroImage from '../../assets/hero/hero1.png'
+import HeroVideo from '../../assets/hero/Biomuebles.mp4'
 import './Hero.css'
+import { useState, useRef } from 'react'
 
 
 /* =====================================================
@@ -56,6 +59,16 @@ const benefits = [
 ===================================================== */
 
 function Hero() {
+  const [isMuted, setIsMuted] = useState(true)
+  const videoRef = useRef(null)
+
+  const toggleAudio = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted
+      setIsMuted(videoRef.current.muted)
+    }
+  }
+
   return (
     <section className="hero">
 
@@ -116,8 +129,8 @@ function Hero() {
 
           <p className="hero-description">
             Limpieza profunda, higienización y cuidado profesional
-            para muebles, colchones, alfombras, cortinas,
-            tapicería, vehículos y mucho más.
+            para muebles, colchones, alfombras, tapicería y vehículos.
+            También ofrecemos instalación de cortinas.
           </p>
 
 
@@ -165,16 +178,28 @@ function Hero() {
 
 
         {/* =================================================
-            IMAGEN
+            VIDEO
         ================================================= */}
 
         <div className="hero-image-wrapper">
 
-          <img
-            src={HeroImage}
-            alt="Limpieza profesional de muebles"
+          <video
+            ref={videoRef}
+            src={HeroVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="hero-image"
           />
+
+          <button
+            className="hero-audio-button"
+            onClick={toggleAudio}
+            aria-label={isMuted ? 'Activar audio' : 'Desactivar audio'}
+          >
+            {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+          </button>
 
         </div>
 
@@ -186,26 +211,6 @@ function Hero() {
       ================================================= */}
 
       <div className="hero-benefits-wrapper">
-
-        {/* =================================================
-            ONDAS SUPERIORES
-        ================================================= */}
-
-        <div
-          className="hero-benefits-waves"
-          aria-hidden="true"
-        >
-          <div className="hero-benefits-wave hero-benefits-wave-back"></div>
-
-          <div className="hero-benefits-wave hero-benefits-wave-middle"></div>
-
-          <div className="hero-benefits-wave hero-benefits-wave-front"></div>
-        </div>
-
-
-        {/* =================================================
-            CONTENEDOR DE BENEFICIOS
-        ================================================= */}
 
         <div className="hero-benefits-container">
 

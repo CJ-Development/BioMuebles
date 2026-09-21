@@ -1,0 +1,381 @@
+/* =========================================================
+   INSTALLATION BANNER
+   Banner horizontal destacado para servicios de instalación
+   ========================================================= */
+
+.installation-banner {
+  position: relative;
+
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 40px auto;
+
+  background: #EFFAFD;
+
+  border: 1px solid rgba(8, 126, 160, 0.12);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 8px 32px rgba(0, 80, 107, 0.08),
+    0 2px 8px rgba(0, 80, 107, 0.04);
+
+  overflow: hidden;
+}
+
+/* Decoración sutil - hoja verde */
+.banner-decoration-leaf {
+  position: absolute;
+
+  top: -20px;
+  right: -15px;
+
+  width: 80px;
+  height: 80px;
+
+  opacity: 0.6;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.banner-decoration-leaf svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Contenedor principal del contenido */
+.banner-content-wrapper {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+
+  padding: 32px 40px;
+
+  z-index: 1;
+}
+
+/* =========================================================
+   IMAGEN
+   ========================================================= */
+
+.banner-image-container {
+  position: relative;
+
+  width: 100%;
+  max-width: 280px;
+  height: 160px;
+
+  flex-shrink: 0;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 16px;
+
+  box-shadow: 0 4px 16px rgba(0, 80, 107, 0.12);
+}
+
+/* Badge NUEVO */
+.banner-new-badge {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  padding: 6px 12px;
+
+  background: #08AE65;
+
+  color: #FFFFFF;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  border-radius: 20px;
+
+  box-shadow: 0 2px 8px rgba(8, 174, 101, 0.3);
+}
+
+/* Icono en círculo */
+.banner-icon-circle {
+  position: absolute;
+
+  bottom: -12px;
+  left: -12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  background: #FFFFFF;
+
+  color: #087EA0;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 4px 12px rgba(0, 80, 107, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   CONTENIDO CENTRAL
+   ========================================================= */
+
+.banner-main-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  min-width: 0;
+}
+
+.banner-header {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  max-width: 420px;
+}
+
+.banner-title {
+  margin: 0;
+
+  color: #00506B;
+
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.banner-description {
+  margin: 0;
+
+  color: #087EA0;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.banner-header-with-button {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Botón CTA */
+.banner-cta-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 28px;
+
+  background: #FFFFFF;
+
+  color: #08AE65;
+
+  border: 2px solid #08AE65;
+
+  border-radius: 50px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  box-shadow: 0 2px 8px rgba(8, 174, 101, 0.1);
+
+  transition:
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  align-self: flex-start;
+}
+
+.banner-cta-button:hover {
+  transform: translateY(-2px);
+
+  background: #F0FFF4;
+
+  box-shadow:
+    0 4px 12px rgba(8, 174, 101, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.banner-cta-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .installation-banner {
+    max-width: 100%;
+
+    margin: 35px auto;
+  }
+
+  .banner-content-wrapper {
+    grid-template-columns: 240px 1fr;
+
+    gap: 28px;
+
+    padding: 28px 32px;
+  }
+
+  .banner-image-container {
+    max-width: 240px;
+    height: 140px;
+  }
+
+  .banner-title {
+    font-size: 24px;
+  }
+
+  .banner-description {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .installation-banner {
+    margin: 30px auto;
+
+    border-radius: 18px;
+  }
+
+  .banner-content-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+    padding: 24px;
+  }
+
+  .banner-image-container {
+    max-width: 100%;
+    height: 180px;
+
+    width: 100%;
+  }
+
+  .banner-new-badge {
+    top: 10px;
+    right: 10px;
+
+    padding: 5px 10px;
+
+    font-size: 10px;
+  }
+
+  .banner-icon-circle {
+    bottom: -10px;
+    left: -10px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .banner-main-content {
+    gap: 16px;
+  }
+
+  .banner-header-with-button {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .banner-header {
+    max-width: 100%;
+  }
+
+  .banner-title {
+    font-size: 22px;
+  }
+
+  .banner-description {
+    font-size: 14px;
+  }
+
+  .banner-cta-button {
+    width: 100%;
+
+    padding: 12px 24px;
+  }
+
+  .banner-decoration-leaf {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .installation-banner {
+    margin: 25px auto;
+
+    border-radius: 16px;
+  }
+
+  .banner-content-wrapper {
+    gap: 20px;
+
+    padding: 20px;
+  }
+
+  .banner-image-container {
+    height: 160px;
+  }
+
+  .banner-title {
+    font-size: 20px;
+  }
+
+  .banner-description {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-cta-button,
+  .banner-icon-circle {
+    transition: none;
+  }
+}

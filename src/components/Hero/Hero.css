@@ -18,14 +18,14 @@
 .hero-content {
   width: 50%;
   flex: 0 0 50%;
-  padding: 55px 35px 85px 0;
+  padding: 55px 50px 85px 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .hero-content > * {
-  max-width: 550px;
+  max-width: 480px;
 }
 
 .hero-eyebrow {
@@ -138,8 +138,52 @@
   transform: scale(1.02);
 }
 
+/* Botón de audio del video */
+.hero-audio-button {
+  position: absolute;
+  z-index: 10;
+
+  bottom: 40px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #073e5b;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0, 59, 92, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hero-audio-button:hover {
+  transform: scale(1.1);
+
+  background: #ffffff;
+
+  box-shadow: 0 6px 16px rgba(0, 59, 92, 0.3);
+}
+
+.hero-audio-button:active {
+  transform: scale(0.95);
+}
+
 /* =====================================================
-   FUSIÓN IMAGEN → FONDO
+   FUSIÓN SUAVE IZQUIERDA
 ===================================================== */
 
 .hero-image-wrapper::before {
@@ -149,38 +193,16 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 45%;
+  width: 80px;
   background: linear-gradient(
     to right,
-    #eefafb 0%,
-    rgba(238, 250, 251, 0.98) 15%,
-    rgba(238, 250, 251, 0.90) 32%,
-    rgba(238, 250, 251, 0.65) 55%,
-    rgba(238, 250, 251, 0.20) 80%,
+    rgba(238, 250, 251, 0.4) 0%,
+    rgba(238, 250, 251, 0.2) 50%,
     rgba(238, 250, 251, 0) 100%
   );
   pointer-events: none;
 }
 
-/* =====================================================
-   FUSIÓN SUAVE DERECHA
-===================================================== */
-
-.hero-image-wrapper::after {
-  content: '';
-  position: absolute;
-  z-index: 2;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 15%;
-  background: linear-gradient(
-    to left,
-    rgba(238, 250, 251, 0.18),
-    rgba(238, 250, 251, 0)
-  );
-  pointer-events: none;
-}
 
 .hero-bubble {
   position: absolute;
@@ -281,50 +303,11 @@
   margin-top: -30px;
 }
 
-.hero-benefits-waves {
-  position: absolute;
-  z-index: 7;
-  left: -5%;
-  top: -1px;
-  width: 110%;
-  height: 105px;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.hero-benefits-wave {
-  position: absolute;
-  left: -5%;
-  width: 110%;
-  border-radius: 0 0 50% 50% / 0 0 100% 100%;
-}
-
-.hero-benefits-wave-back {
-  top: -42px;
-  height: 105px;
-  background: rgba(255, 255, 255, 0.48);
-  transform: translateX(-3%) rotate(-1deg);
-}
-
-.hero-benefits-wave-middle {
-  top: -7px;
-  height: 75px;
-  background: rgba(255, 255, 255, 0.72);
-  transform: translateX(3%) rotate(1.5deg);
-}
-
-.hero-benefits-wave-front {
-  top: 18px;
-  height: 75px;
-  background: #ffffff;
-  transform: translateX(-2%) rotate(-1deg);
-}
-
 .hero-benefits-container {
   position: relative;
   z-index: 8;
   width: 100%;
-  max-width: 1340px;
+  max-width: 1024px;
   min-height: 68px;
   margin: 0 auto;
   display: grid;
@@ -383,9 +366,9 @@
 .hero-waves {
   position: absolute;
   z-index: 5;
-  left: -5%;
+  left: 0;
   bottom: -1px;
-  width: 110%;
+  width: 100%;
   height: 105px;
   pointer-events: none;
   overflow: hidden;
@@ -393,8 +376,8 @@
 
 .hero-wave {
   position: absolute;
-  left: -5%;
-  width: 110%;
+  left: 0;
+  width: 100%;
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
@@ -402,21 +385,21 @@
   bottom: 18px;
   height: 75px;
   background: rgba(255, 255, 255, 0.48);
-  transform: translateX(-3%) rotate(-1deg);
+  transform: rotate(-1deg);
 }
 
 .hero-wave-middle {
   bottom: 7px;
   height: 75px;
   background: rgba(255, 255, 255, 0.72);
-  transform: translateX(3%) rotate(1.5deg);
+  transform: rotate(1.5deg);
 }
 
 .hero-wave-front {
   bottom: -42px;
   height: 105px;
   background: #ffffff;
-  transform: translateX(-2%) rotate(-1deg);
+  transform: rotate(-1deg);
 }
 
 @media (max-width: 1100px) {

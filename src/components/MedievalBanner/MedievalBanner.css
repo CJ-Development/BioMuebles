@@ -1,0 +1,776 @@
+/* =========================================================
+   MEDIEVAL BANNER
+   Banderola vertical decorativa
+   ========================================================= */
+
+.medieval-banner {
+  --banner-blue-dark: #00506b;
+  --banner-blue: #087ea0;
+  --banner-blue-light: #0d9ac0;
+
+  --banner-green-dark: #087344;
+  --banner-green: #08a45f;
+  --banner-green-light: #16bb72;
+
+  --banner-gold-dark: #a8791d;
+  --banner-gold: #d9aa43;
+  --banner-gold-light: #f2d47b;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 285px;
+
+  margin: 24px auto 45px;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  filter: drop-shadow(0 12px 18px rgba(0, 59, 92, 0.12));
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   SOPORTE / PALO SUPERIOR
+   ========================================================= */
+
+.banner-support {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 112%;
+  height: 18px;
+
+  margin-bottom: -2px;
+
+  z-index: 5;
+}
+
+
+/* Barras laterales */
+
+.banner-support-left,
+.banner-support-right {
+  position: relative;
+
+  width: 42%;
+  height: 10px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--banner-gold-light) 0%,
+      var(--banner-gold) 35%,
+      var(--banner-gold-dark) 100%
+    );
+
+  border: 1px solid rgba(120, 80, 10, 0.65);
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.22),
+    inset 0 1px 1px rgba(255, 255, 255, 0.65);
+}
+
+
+/* Pequeños detalles de los extremos */
+
+.banner-support-left::before,
+.banner-support-right::after {
+  content: '';
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 14px;
+  height: 14px;
+
+  transform: translateY(-50%) rotate(45deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--banner-gold-light),
+      var(--banner-gold)
+    );
+
+  border: 1px solid var(--banner-gold-dark);
+
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.banner-support-left::before {
+  left: -7px;
+}
+
+.banner-support-right::after {
+  right: -7px;
+}
+
+
+/* Parte central del palo */
+
+.banner-support::before {
+  content: '';
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 16%;
+  height: 18px;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--banner-gold-light) 0%,
+      var(--banner-gold) 45%,
+      var(--banner-gold-dark) 100%
+    );
+
+  border: 1px solid rgba(120, 80, 10, 0.65);
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   CUERPO PRINCIPAL
+   ========================================================= */
+
+.banner-body {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 390px;
+
+  padding: 48px 28px 50px;
+
+  overflow: hidden;
+
+  border: 2px solid;
+
+  border-radius: 3px 3px 0 0;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16),
+    inset 0 0 30px rgba(0, 0, 0, 0.08),
+    0 8px 18px rgba(0, 40, 60, 0.15);
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 96%,
+    92% 94%,
+    84% 97%,
+    76% 94%,
+    68% 98%,
+    60% 94%,
+    50% 100%,
+    40% 94%,
+    32% 98%,
+    24% 94%,
+    16% 97%,
+    8% 94%,
+    0 96%
+  );
+}
+
+
+/* =========================================================
+   VARIANTE AZUL
+   ========================================================= */
+
+.medieval-banner-blue .banner-body {
+  border-color: #d1a33c;
+
+  background:
+    linear-gradient(
+      145deg,
+      #00627d 0%,
+      #00516d 45%,
+      #003e57 100%
+    );
+}
+
+.medieval-banner-blue .banner-title {
+  color: #ffffff;
+}
+
+.medieval-banner-blue .banner-text {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.medieval-banner-blue .banner-decoration-top,
+.medieval-banner-blue .banner-decoration-bottom {
+  border-color: rgba(242, 212, 123, 0.75);
+}
+
+.medieval-banner-blue .banner-ornament-left,
+.medieval-banner-blue .banner-ornament-right {
+  background: var(--banner-gold);
+  box-shadow:
+    0 0 0 2px rgba(242, 212, 123, 0.25),
+    0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.medieval-banner-blue .banner-point-svg path {
+  fill: #00516d;
+  stroke: #d9aa43;
+  stroke-width: 1.5;
+}
+
+
+/* =========================================================
+   VARIANTE VERDE
+   ========================================================= */
+
+.medieval-banner-green .banner-body {
+  border-color: #d1a33c;
+
+  background:
+    linear-gradient(
+      145deg,
+      #07945a 0%,
+      #087b4b 48%,
+      #075f3b 100%
+    );
+}
+
+.medieval-banner-green .banner-title {
+  color: #ffffff;
+}
+
+.medieval-banner-green .banner-text {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.medieval-banner-green .banner-decoration-top,
+.medieval-banner-green .banner-decoration-bottom {
+  border-color: rgba(242, 212, 123, 0.75);
+}
+
+.medieval-banner-green .banner-ornament-left,
+.medieval-banner-green .banner-ornament-right {
+  background: var(--banner-gold);
+  box-shadow:
+    0 0 0 2px rgba(242, 212, 123, 0.25),
+    0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.medieval-banner-green .banner-point-svg path {
+  fill: #087b4b;
+  stroke: #d9aa43;
+  stroke-width: 1.5;
+}
+
+
+/* =========================================================
+   BRILLO DECORATIVO DEL CUERPO
+   ========================================================= */
+
+.banner-body::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 25%,
+      transparent 70%,
+      rgba(255, 255, 255, 0.04)
+    );
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   DECORACIÓN SUPERIOR
+   ========================================================= */
+
+.banner-decoration-top {
+  position: absolute;
+
+  top: 16px;
+  left: 18px;
+  right: 18px;
+
+  height: 10px;
+
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  opacity: 0.9;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   DECORACIÓN INFERIOR
+   ========================================================= */
+
+.banner-decoration-bottom {
+  position: absolute;
+
+  bottom: 30px;
+  left: 18px;
+  right: 18px;
+
+  height: 10px;
+
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  opacity: 0.9;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   ORNAMENTOS
+   ========================================================= */
+
+.banner-ornament-left,
+.banner-ornament-right {
+  position: absolute;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  transform: rotate(45deg);
+}
+
+.banner-ornament-left {
+  top: -5px;
+  left: -2px;
+}
+
+.banner-ornament-right {
+  top: -5px;
+  right: -2px;
+}
+
+
+/* Decoración inferior */
+
+.banner-decoration-bottom .banner-ornament-left {
+  top: -5px;
+  bottom: auto;
+}
+
+.banner-decoration-bottom .banner-ornament-right {
+  top: -5px;
+  bottom: auto;
+}
+
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.banner-content {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 16px;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.banner-title {
+  position: relative;
+
+  max-width: 220px;
+
+  margin: 8px auto 4px;
+
+  font-size: 22px;
+  font-weight: 900;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.4px;
+
+  text-align: center;
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Línea decorativa debajo del título */
+
+.banner-title::after {
+  content: '';
+
+  display: block;
+
+  width: 48px;
+  height: 3px;
+
+  margin: 12px auto 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--banner-gold-light),
+      transparent
+    );
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.banner-text {
+  width: 100%;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+
+  font-weight: 500;
+
+  text-align: left;
+
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+.banner-text p {
+  margin: 0 0 12px;
+}
+
+.banner-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LISTAS
+   ========================================================= */
+
+.banner-text ul {
+  width: 100%;
+
+  margin: 8px 0 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.banner-text li {
+  position: relative;
+
+  margin: 10px 0;
+
+  padding-left: 24px;
+
+  line-height: 1.4;
+}
+
+
+/* Check dorado */
+
+.banner-text li::before {
+  content: '✓';
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 17px;
+  height: 17px;
+
+  color: #075f3b;
+
+  background: var(--banner-gold-light);
+
+  border-radius: 50%;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  text-shadow: none;
+
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   PUNTA INFERIOR
+   ========================================================= */
+
+.banner-point {
+  position: absolute;
+
+  bottom: -16px;
+  left: 50%;
+
+  width: 72px;
+  height: 52px;
+
+  transform: translateX(-50%);
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+.banner-point-svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  filter:
+    drop-shadow(0 3px 4px rgba(0, 0, 0, 0.16));
+}
+
+.banner-point-svg path {
+  vector-effect: non-scaling-stroke;
+}
+
+
+/* =========================================================
+   PEQUEÑO EFECTO DE PROFUNDIDAD
+   ========================================================= */
+
+.medieval-banner::after {
+  content: '';
+
+  position: absolute;
+
+  left: 7%;
+  right: 7%;
+
+  bottom: 18px;
+
+  height: 18px;
+
+  background: rgba(0, 0, 0, 0.16);
+
+  filter: blur(14px);
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .medieval-banner {
+    max-width: 270px;
+  }
+
+  .banner-body {
+    min-height: 370px;
+
+    padding:
+      44px
+      24px
+      48px;
+  }
+
+  .banner-title {
+    font-size: 20px;
+  }
+
+  .banner-text {
+    font-size: 12.5px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .medieval-banner {
+    max-width: 250px;
+
+    margin:
+      18px auto
+      38px;
+  }
+
+  .banner-body {
+    min-height: 350px;
+
+    padding:
+      42px
+      22px
+      46px;
+  }
+
+  .banner-title {
+    font-size: 19px;
+  }
+
+  .banner-text {
+    font-size: 12px;
+  }
+
+  .banner-text li {
+    margin: 8px 0;
+
+    padding-left: 22px;
+  }
+
+  .banner-text li::before {
+    width: 16px;
+    height: 16px;
+
+    font-size: 10px;
+  }
+
+  .banner-point {
+    width: 64px;
+    height: 46px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .medieval-banner {
+    max-width: 235px;
+
+    margin:
+      15px auto
+      35px;
+  }
+
+  .banner-support {
+    width: 110%;
+  }
+
+  .banner-body {
+    min-height: 330px;
+
+    padding:
+      40px
+      19px
+      44px;
+  }
+
+  .banner-decoration-top {
+    left: 14px;
+    right: 14px;
+  }
+
+  .banner-decoration-bottom {
+    left: 14px;
+    right: 14px;
+
+    bottom: 25px;
+  }
+
+  .banner-title {
+    max-width: 190px;
+
+    font-size: 18px;
+  }
+
+  .banner-text {
+    font-size: 11.5px;
+
+    line-height: 1.5;
+  }
+
+  .banner-text li {
+    margin: 7px 0;
+  }
+
+  .banner-point {
+    width: 58px;
+    height: 42px;
+
+    bottom: -13px;
+  }
+}
+
+
+/* =========================================================
+   REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .medieval-banner,
+  .banner-point,
+  .banner-body {
+    animation: none;
+    transition: none;
+  }
+}
