@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom'
 import HeroVideo from '../../assets/hero/Biomuebles.mp4'
 import './Hero.css'
 import { useState, useRef } from 'react'
+import ServiceModal from '../ServiceModal/ServiceModal'
 
 
 /* =====================================================
@@ -60,6 +61,7 @@ const benefits = [
 
 function Hero() {
   const [isMuted, setIsMuted] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const videoRef = useRef(null)
 
   const toggleAudio = () => {
@@ -112,25 +114,23 @@ function Hero() {
           {/* Texto pequeño */}
 
           <span className="hero-eyebrow">
-            SERVICIOS PROFESIONALES DE LIMPIEZA
+            SERVICIOS PROFESIONALES PARA TUS ESPACIOS
           </span>
 
 
           {/* Título */}
 
           <h1>
-            Dale una nueva vida
+            Renueva, limpia y transforma
             <br />
-            <span>a tus espacios</span>
+            <span>tus espacios</span>
           </h1>
 
 
           {/* Descripción */}
 
           <p className="hero-description">
-            Limpieza profunda, higienización y cuidado profesional
-            para muebles, colchones, alfombras, tapicería y vehículos.
-            También ofrecemos instalación de cortinas.
+            Servicios profesionales de limpieza e higienización para muebles, colchones, alfombras, tapicería y vehículos, junto con instalación de cortinas para renovar y complementar cada espacio.
           </p>
 
 
@@ -142,10 +142,8 @@ function Hero() {
 
             {/* WhatsApp */}
 
-            <a
-              href="https://wa.me/573017921784"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="hero-button hero-button-primary"
             >
               <WhatsAppIcon />
@@ -153,7 +151,7 @@ function Hero() {
               <span>
                 Solicitar cotización
               </span>
-            </a>
+            </button>
 
 
             {/* Servicios */}
@@ -259,6 +257,13 @@ function Hero() {
         <div className="hero-wave hero-wave-front"></div>
 
       </div>
+
+      <ServiceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        whatsappNumber="573017921784"
+        defaultMessage="Hola, me interesa obtener información sobre sus servicios de limpieza e instalación."
+      />
 
     </section>
   )

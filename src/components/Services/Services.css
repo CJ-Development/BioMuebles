@@ -650,18 +650,23 @@
   font-weight: 600;
 }
 
-.service-content a {
+.service-content button {
   display: inline-flex;
   align-items: center;
   gap: 7px;
 
   color: var(--color-primary);
 
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 700;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
-.service-content a:hover {
+.service-content button:hover {
   color: var(--color-primary-dark);
 }
 

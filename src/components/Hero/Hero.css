@@ -112,6 +112,18 @@
   box-shadow: 0 9px 23px rgba(13, 74, 95, 0.13);
 }
 
+.hero-button-tertiary {
+  color: #075274;
+  background: #e8f4f8;
+  border: 1px solid #d0e8f0;
+  box-shadow: 0 6px 18px rgba(13, 74, 95, 0.09);
+}
+
+.hero-button-tertiary:hover {
+  background: #dcedf4;
+  box-shadow: 0 9px 23px rgba(13, 74, 95, 0.13);
+}
+
 /* =====================================================
    IMAGEN - ESTILOS DE WHYCHOOSEUS
 ===================================================== */

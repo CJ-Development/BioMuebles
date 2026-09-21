@@ -152,18 +152,18 @@
 
   gap: 12px;
 
-  max-width: 420px;
+  max-width: 100%;
 }
 
-.banner-title {
+.banner-subtitle {
   margin: 0;
 
   color: #00506B;
 
-  font-size: 26px;
-  font-weight: 800;
+  font-size: 22px;
+  font-weight: 700;
   letter-spacing: -0.5px;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 .banner-description {
@@ -180,6 +180,13 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
+}
+
+.banner-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 180px;
 }
 
 /* Botón CTA */
@@ -217,22 +224,78 @@
     box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
   align-self: flex-start;
+
+  cursor: pointer;
 }
 
 .banner-cta-button:hover {
   transform: translateY(-2px);
 
-  background: #F0FFF4;
+  background: #067a42;
 
   box-shadow:
-    0 4px 12px rgba(8, 174, 101, 0.2),
-    0 2px 4px rgba(0, 0, 0, 0.08);
+    0 10px 28px rgba(8, 174, 101, 0.28);
 }
 
-.banner-cta-button:active {
-  transform: translateY(0);
+.banner-cta-button svg:last-child {
+  flex-shrink: 0;
+
+  transition:
+    transform 0.2s ease;
 }
 
+.banner-cta-button:hover svg:last-child {
+  transform: translateX(3px);
+}
+
+/* Botón de catálogo */
+.banner-catalog-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 20px;
+
+  color: #00506B;
+
+  background: #e8f4f8;
+
+  border: 1px solid #d0e8f0;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 4px 14px rgba(0, 80, 107, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.banner-catalog-button:hover {
+  transform: translateY(-2px);
+
+  background: #dcedf4;
+
+  box-shadow:
+    0 8px 20px rgba(0, 80, 107, 0.15);
+}
+
+.banner-catalog-button svg {
+  flex-shrink: 0;
+}
 
 /* =========================================================
    TABLET
@@ -318,6 +381,11 @@
   .banner-header-with-button {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .banner-buttons-wrapper {
+    flex-direction: row;
+    min-width: auto;
   }
 
   .banner-header {

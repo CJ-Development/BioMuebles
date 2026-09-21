@@ -16,6 +16,8 @@ import Colchones from '../../assets/services/Colchones.png'
 
 import MedievalBanner from '../MedievalBanner/MedievalBanner'
 import InstallationBanner from '../InstallationBanner/InstallationBanner'
+import { useState } from 'react'
+import ServiceModal from '../ServiceModal/ServiceModal'
 
 import './Services.css'
 
@@ -81,6 +83,14 @@ const services = [
 ]
 
 function Services({ showBanners = false }) {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedService, setSelectedService] = useState('')
+
+  const handleOpenModal = (serviceName) => {
+    setSelectedService(serviceName)
+    setIsModalOpen(true)
+  }
+
   return (
     <section className="services-section" id="servicios">
       {/* Burbujas decorativas */}
@@ -191,14 +201,12 @@ function Services({ showBanners = false }) {
 
                     <p>{service.description}</p>
 
-                    <a
-                      href={`https://wa.me/3125278094?text=Hola, me interesa obtener información sobre el servicio de ${service.title}.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => handleOpenModal(service.title)}
                     >
                       Solicitar servicio
                       <ArrowRight size={16} />
-                    </a>
+                    </button>
                   </div>
                 </article>
               )
@@ -207,6 +215,13 @@ function Services({ showBanners = false }) {
         </div>
 
       </div>
+
+      <ServiceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        whatsappNumber="3125278094"
+        defaultMessage={`Hola, me interesa obtener información sobre el servicio de ${selectedService}.`}
+      />
     </section>
   )
 }
