@@ -59,6 +59,12 @@
   font-weight: 500;
 }
 
+.hero-description-point {
+  color: #08ae65;
+  font-weight: 800;
+  margin-right: 4px;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;

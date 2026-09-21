@@ -130,9 +130,10 @@ function Hero() {
           {/* Descripción */}
 
           <p className="hero-description">
-            Servicios profesionales de limpieza e higienización para muebles, colchones, alfombras, tapicería y vehículos, junto con instalación de cortinas para renovar y complementar cada espacio.
+            <span className="hero-description-point">1.</span> Servicios profesionales de limpieza e higienización para muebles, colchones, cortinas, alfombras, tapicería, vehículos y artículos de mascotas.
+            <br />
+            <span className="hero-description-point">2.</span> Servicios de realización e instalación de cortinas para renovar y complementar cada espacio.
           </p>
-
 
           {/* =================================================
               BOTONES

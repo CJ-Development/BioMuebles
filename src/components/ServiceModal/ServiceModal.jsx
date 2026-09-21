@@ -6,7 +6,8 @@ function ServiceModal({ isOpen, onClose, whatsappNumber, defaultMessage }) {
   const [formData, setFormData] = useState({
     nombre: '',
     telefono: '',
-    email: '',
+    direccion: '',
+    ciudad: '',
     mensaje: defaultMessage || 'Hola, me interesa obtener información sobre sus servicios.'
   })
 
@@ -15,7 +16,7 @@ function ServiceModal({ isOpen, onClose, whatsappNumber, defaultMessage }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     
-    const message = `*Solicitud de Servicio*\n\n*Nombre:* ${formData.nombre}\n*Teléfono:* ${formData.telefono}\n*Email:* ${formData.email}\n*Mensaje:* ${formData.mensaje}`
+    const message = `*Solicitud de Servicio*\n\n*Nombre:* ${formData.nombre}\n*Teléfono:* ${formData.telefono}\n*Ciudad:* ${formData.ciudad}\n*Dirección/Barrio:* ${formData.direccion}\n*Mensaje:* ${formData.mensaje}`
     
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     
@@ -67,15 +68,28 @@ function ServiceModal({ isOpen, onClose, whatsappNumber, defaultMessage }) {
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email *</label>
+            <label htmlFor="direccion">Dirección/Barrio *</label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
+              type="text"
+              id="direccion"
+              name="direccion"
+              value={formData.direccion}
               onChange={handleChange}
               required
-              placeholder="tu@email.com"
+              placeholder="Tu dirección o barrio"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="ciudad">Ciudad *</label>
+            <input
+              type="text"
+              id="ciudad"
+              name="ciudad"
+              value={formData.ciudad}
+              onChange={handleChange}
+              required
+              placeholder="Tu ciudad"
             />
           </div>
 
