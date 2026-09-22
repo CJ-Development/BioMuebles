@@ -100,7 +100,8 @@
   margin: 10px;
 }
 
-.social-wrapper .social-icon a {
+.social-wrapper .social-icon a,
+.social-wrapper .social-icon button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,6 +113,9 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .social-wrapper .social-tooltip {

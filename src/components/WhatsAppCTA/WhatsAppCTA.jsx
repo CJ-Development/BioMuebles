@@ -1,5 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import './WhatsAppCTA.css'
+import { useState } from 'react'
+import ServiceModal from '../ServiceModal/ServiceModal'
 
 const WhatsAppIcon = () => (
   <svg
@@ -13,6 +15,8 @@ const WhatsAppIcon = () => (
 )
 
 function WhatsAppCTA() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <section className="whatsapp-cta">
 
@@ -61,10 +65,8 @@ function WhatsAppCTA() {
 
         </div>
 
-        <a
-          href="https://wa.me/3125278094?text=Hola, me interesa obtener una cotización para servicios de limpieza profesional."
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => setIsModalOpen(true)}
           className="cta-button"
         >
           <WhatsAppIcon />
@@ -75,10 +77,16 @@ function WhatsAppCTA() {
             size={18}
             strokeWidth={2.5}
           />
-        </a>
+        </button>
 
       </div>
 
+      <ServiceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        whatsappNumber="573017921784"
+        defaultMessage="Hola, me interesa obtener una cotización para servicios de limpieza profesional."
+      />
     </section>
   )
 }

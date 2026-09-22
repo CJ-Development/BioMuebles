@@ -239,7 +239,7 @@ function Services({ showBanners = false }) {
       <ServiceModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        whatsappNumber="3125278094"
+        whatsappNumber="573017921784"
         defaultMessage={`Hola, me interesa obtener información sobre el servicio de ${selectedService}.`}
       />
     </section>

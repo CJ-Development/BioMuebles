@@ -1,4 +1,6 @@
 import './WhatsAppFloatingBubble.css'
+import { useState } from 'react'
+import ServiceModal from '../ServiceModal/ServiceModal'
 
 const WhatsAppIcon = () => (
   <svg
@@ -12,16 +14,25 @@ const WhatsAppIcon = () => (
 )
 
 function WhatsAppFloatingBubble() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
-    <a
-      href="https://wa.me/573017921784?text=Hola, me gustaría obtener más información sobre sus servicios de limpieza profesional."
-      target="_blank"
-      rel="noopener noreferrer"
-      className="whatsapp-floating-bubble"
-      aria-label="Contactar por WhatsApp"
-    >
-      <WhatsAppIcon />
-    </a>
+    <>
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="whatsapp-floating-bubble"
+        aria-label="Contactar por WhatsApp"
+      >
+        <WhatsAppIcon />
+      </button>
+
+      <ServiceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        whatsappNumber="573017921784"
+        defaultMessage="Hola, me gustaría obtener más información sobre sus servicios de limpieza profesional."
+      />
+    </>
   )
 }
 

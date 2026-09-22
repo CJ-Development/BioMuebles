@@ -3,6 +3,7 @@ import { Menu, X, ArrowRight } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
 import Logo from '../../assets/images/Logo.png'
+import ServiceModal from '../ServiceModal/ServiceModal'
 
 const WhatsAppIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="whatsapp-icon">
@@ -12,6 +13,7 @@ const WhatsAppIcon = () => (
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const location = useLocation()
 
   const closeMenu = () => {
@@ -45,16 +47,14 @@ function Header() {
         </nav>
 
         {/* Botón WhatsApp escritorio */}
-        <a
-          href="https://wa.me/573017921784"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => setIsModalOpen(true)}
           className="header-whatsapp"
         >
           <WhatsAppIcon />
           <span>Cotizar por WhatsApp</span>
           <ArrowRight size={17} strokeWidth={2.5} />
-        </a>
+        </button>
 
         {/* Botón menú móvil */}
         <button
@@ -83,19 +83,26 @@ function Header() {
             Nosotros
           </Link>
 
-          <a
-            href="https://wa.me/573017921784"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => {
+              setIsModalOpen(true)
+              closeMenu()
+            }}
             className="mobile-whatsapp"
-            onClick={closeMenu}
           >
             <WhatsAppIcon />
             Cotizar por WhatsApp
             <ArrowRight size={17} />
-          </a>
+          </button>
         </nav>
       </div>
+
+      <ServiceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        whatsappNumber="573017921784"
+        defaultMessage="Hola, me interesa obtener una cotización para servicios de limpieza profesional."
+      />
     </header>
   )
 }
