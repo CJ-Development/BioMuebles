@@ -40,13 +40,15 @@ function WhyChooseUs() {
 
         <div className="why-content">
 <h2>
-  ¿Por qué contratar nuestros
-  <br />
-  servicios de limpieza?
+  ¿Por qué elegir los servicios de BioMuebles?
 </h2>
 
           <p className="why-description">
-            Tus muebles acompañan los momentos más importantes de tu hogar, y con el tiempo acumulan manchas, polvo y olores que afectan su frescura. Nuestro servicio de limpieza profunda está pensado para renovarlos con cuidado, eliminando suciedad sin maltratar las telas. Más que limpiar, buscamos que vuelvas a sentir la comodidad, frescura y tranquilidad de un espacio verdaderamente limpio.
+            1. Tus muebles, colchones, cortinas y espacios acompañan los momentos más importantes de tu hogar. Con el tiempo, acumulan manchas, polvo, ácaros y olores que afectan su frescura y bienestar. En BioMuebles realizamos limpieza e higienización profesional para renovar cada superficie con cuidado, eliminando la suciedad sin maltratar las telas ni los materiales.
+          </p>
+
+          <p className="why-description">
+            2. Además, complementamos la transformación de tus espacios con nuestro servicio de fabricación, instalación y mantenimiento de cortinas, pensado para armonizar cada ambiente. Más que limpiar, buscamos que vuelvas a sentir la comodidad, frescura y tranquilidad de un hogar verdaderamente renovado.
           </p>
 
           <div className="why-reasons">

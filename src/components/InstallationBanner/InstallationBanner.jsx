@@ -55,7 +55,7 @@ function InstallationBanner() {
                 </button>
 
                 <a
-                  href="/src/assets/Catalogo/Catalogo.pdf"
+                  href="/Catalogo.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="banner-catalog-button"
