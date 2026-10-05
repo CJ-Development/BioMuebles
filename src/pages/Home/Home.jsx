@@ -11,6 +11,9 @@ function Home() {
   return (
     <>
       <main>
+        <h1 className="sr-only">
+          Limpieza de muebles, limpieza profunda de casa e instalación de cortinas en Colombia
+        </h1>
         <Hero />
 
         <Services />

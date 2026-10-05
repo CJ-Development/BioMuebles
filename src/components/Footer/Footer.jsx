@@ -74,9 +74,9 @@ function Footer() {
               +57 301 792 1784
             </a>
 
-            <a href="mailto:biomueblescomercial@gmail.com">
+            <a href="mailto:Biomueblescolombia@gmail.com">
               <Mail size={16} />
-              biomueblescomercial@gmail.com
+              Biomueblescolombia@gmail.com
             </a>
 
           </div>

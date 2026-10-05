@@ -9,6 +9,7 @@ import {
   CircleDot,
   ArrowRight,
   Wrench,
+  House,
 } from 'lucide-react'
 
 import LimpiezaMuebles from '../../assets/services/Limpieza Muebles.jpeg'

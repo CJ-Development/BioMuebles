@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Star, X, Send, AlertCircle, CheckCircle2, Loader2 } from 'lucide-react'
 import { supabase } from '../../lib/supabase'
 import './Reviews.css'
@@ -19,6 +19,50 @@ function Reviews() {
   })
 
   const [formErrors, setFormErrors] = useState({})
+  
+  const scrollRef = useRef(null)
+
+  // Lógica de carrusel (scroll automático hacia arriba)
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el || reviews.length === 0) return
+
+    let animationId
+    let isHovered = false
+
+    const scrollStep = () => {
+      if (!isHovered && el) {
+        el.scrollTop += 0.5 // Velocidad del scroll
+        // Si llegamos al final del scroll, volver arriba suavemente
+        if (el.scrollTop >= el.scrollHeight - el.clientHeight - 1) {
+          el.scrollTop = 0
+        }
+      }
+      animationId = requestAnimationFrame(scrollStep)
+    }
+
+    animationId = requestAnimationFrame(scrollStep)
+
+    const handleMouseEnter = () => isHovered = true
+    const handleMouseLeave = () => isHovered = false
+    const handleTouchStart = () => isHovered = true
+    const handleTouchEnd = () => isHovered = false
+
+    el.addEventListener('mouseenter', handleMouseEnter)
+    el.addEventListener('mouseleave', handleMouseLeave)
+    el.addEventListener('touchstart', handleTouchStart, { passive: true })
+    el.addEventListener('touchend', handleTouchEnd, { passive: true })
+
+    return () => {
+      cancelAnimationFrame(animationId)
+      if (el) {
+         el.removeEventListener('mouseenter', handleMouseEnter)
+         el.removeEventListener('mouseleave', handleMouseLeave)
+         el.removeEventListener('touchstart', handleTouchStart)
+         el.removeEventListener('touchend', handleTouchEnd)
+      }
+    }
+  }, [reviews])
 
   // Cargar opiniones al montar el componente
   useEffect(() => {
@@ -249,25 +293,27 @@ function Reviews() {
 
         {/* Lista de opiniones */}
         {!loading && !error && (
-          <div className="reviews-list">
-            {reviews.length === 0 ? (
-              <div className="no-reviews">
-                <p>Aún no hay opiniones. ¡Sé el primero en dejar la tuya!</p>
-              </div>
-            ) : (
-              reviews.map((review) => (
-                <article key={review.id} className="review-card">
-                  <div className="review-header">
-                    <div className="review-author">
-                      <span className="author-name">{review.nombre}</span>
-                      <span className="review-date">{formatDate(review.created_at)}</span>
+          <div className="reviews-scroller" ref={scrollRef}>
+            <div className="reviews-list">
+              {reviews.length === 0 ? (
+                <div className="no-reviews">
+                  <p>Aún no hay opiniones. ¡Sé el primero en dejar la tuya!</p>
+                </div>
+              ) : (
+                reviews.map((review) => (
+                  <article key={review.id} className="review-card">
+                    <div className="review-header">
+                      <div className="review-author">
+                        <span className="author-name">{review.nombre}</span>
+                        <span className="review-date">{formatDate(review.created_at)}</span>
+                      </div>
+                      {renderStars(review.calificacion)}
                     </div>
-                    {renderStars(review.calificacion)}
-                  </div>
-                  <p className="review-comment">{review.comentario}</p>
-                </article>
-              ))
-            )}
+                    <p className="review-comment">{review.comentario}</p>
+                  </article>
+                ))
+              )}
+            </div>
           </div>
         )}
 

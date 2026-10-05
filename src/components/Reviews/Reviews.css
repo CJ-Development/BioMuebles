@@ -200,12 +200,42 @@
   background: var(--color-primary-dark);
 }
 
+/* Scroller de opiniones */
+.reviews-scroller {
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  margin-bottom: 40px;
+  border-radius: var(--radius-lg);
+  /* Scrollbar styling para Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-light) transparent;
+}
+
+.reviews-scroller::-webkit-scrollbar {
+  width: 6px;
+}
+
+.reviews-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.reviews-scroller::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 10px;
+}
+
+.reviews-scroller::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
 /* Lista de opiniones */
 .reviews-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
-  margin-bottom: 40px;
+  align-items: start;
 }
 
 .no-reviews {
